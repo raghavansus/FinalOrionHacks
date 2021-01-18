@@ -185,15 +185,23 @@ class homescreen extends State<StatefulWidget> {
       width: 140,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(15)),
-        boxShadow: [
-          new BoxShadow(
-            color: Colors.blueGrey[900],
-            blurRadius: 10.0,
-          ),
-        ],
+        gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            // 0xFFF57C00
+            colors: [Colors.blue, const Color(0xFFF57C00)]
+        ),
       ),
+      // decoration: BoxDecoration(
+      //   color: Colors.white,
+      //   borderRadius: BorderRadius.all(Radius.circular(15)),
+      //   boxShadow: [
+      //     new BoxShadow(
+      //       color: Colors.blueGrey[900],
+      //       blurRadius: 10.0,
+      //     ),
+      //   ],
+      // ),
       child: Column(
         children: <Widget>[
           Text(categoryName),

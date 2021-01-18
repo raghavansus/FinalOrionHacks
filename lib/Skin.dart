@@ -16,7 +16,10 @@ class Skin extends StatelessWidget {
     return MaterialApp(
       title: "Home Page",
       home: SkinPage(),
+
+
     );
+
     // TODO: implement build
   }
 }
@@ -113,7 +116,8 @@ class skinpage extends State<StatefulWidget> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Questionare about your skin'),
-          backgroundColor: Color(0xFF00E676),
+          // textTheme: ,
+          backgroundColor: Color(0xFFF57C00),
         ),
         body: Padding(
           padding: const EdgeInsets.all(30.0),
@@ -204,7 +208,7 @@ class Answer extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: RaisedButton(
-        color: Color(0xFF00E676),
+        color: Color(0xFFF57C00),
         textColor: Colors.white,
         child: Text(answerText),
         onPressed: selectHandler,
