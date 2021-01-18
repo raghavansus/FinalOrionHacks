@@ -208,16 +208,9 @@ class Result extends StatelessWidget {
             child: Text(
               'Try out our Eye Disease detector.',
             ), //Text
-            textColor: Colors.blue,
+            textColor: Color(0xFFF57C00),
             onPressed: resetHandler,
           ),
-          FlatButton(
-            child: Text(
-              'Skip Photo and get your results!',
-            ), //Text
-            textColor: Colors.blue,
-            onPressed: resetHandler,
-          ),//FlatButton
         ], //<Widget>[]
       ), //Column
     ); //Center

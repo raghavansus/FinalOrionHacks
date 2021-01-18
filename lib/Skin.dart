@@ -210,14 +210,14 @@ class Result extends StatelessWidget {
             child: Text(
               'Take a photo of your skin',
             ), //Text
-            textColor: Colors.blue,
+            textColor: Color(0xFFF57C00),
             onPressed: resetHandler,
           ),
           FlatButton(
             child: Text(
               'Skip Photo and get percentage of skin disease',
             ), //Text
-            textColor: Colors.blue,
+            textColor: Color(0xFFF57C00),
             onPressed: resetHandler,
           ), //FlatButton
         ], //<Widget>[]
