@@ -9,6 +9,10 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="eye_detector"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA_WuC1gADhuVHP1-nKgoLEMyt1d98TCIQ"/>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
