@@ -20,24 +20,8 @@ class _MyAppState extends State<NearbyDoc> {
 
   }
 
-  Set<Marker> markers = {};
 
-  void method() {
-    Marker startMarker = Marker(
-      markerId: MarkerId('KaiserHospital'),
-      position: LatLng(
-          37.335489, -121.998827
-      ),
-      infoWindow: InfoWindow(
-        title: 'Kaiser Permanente',
-      ),
-      icon: BitmapDescriptor.defaultMarker,
 
-    );
-
-    markers.add(startMarker);
-    // markers.add(destinationMarker);
-  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,7 +32,6 @@ class _MyAppState extends State<NearbyDoc> {
         ),
         body: GoogleMap(
 
-          markers: markers != null ? Set<Marker>.from(markers) : null,
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
             target: _center,
