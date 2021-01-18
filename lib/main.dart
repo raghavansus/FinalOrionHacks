@@ -1,4 +1,5 @@
 import 'package:eye_detector/screens/chat_screen.dart';
+import 'package:eye_detector/screens/login_screen.dart';
 import 'package:eye_detector/screens/registration_screen.dart';
 import 'package:eye_detector/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
