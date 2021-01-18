@@ -146,22 +146,14 @@ class Result extends StatelessWidget {
 
   //Remark Logic
   String get resultPhrase {
+    double score = 100 * (resultScore/30);
+    int printS = score.toInt();
     String resultText;
-    if (resultScore >= 41) {
-      resultText = 'You are awesome!';
-      print(resultScore);
-    } else if (resultScore >= 31) {
-      resultText = 'Pretty likeable!';
-      print(resultScore);
-    } else if (resultScore >= 21) {
-      resultText = 'You need to work more!';
-    } else if (resultScore >= 1) {
-      resultText = 'You need to work hard!';
-    } else {
-      resultText = 'This is a poor score!';
-      print(resultScore);
-    }
+
+    resultText = 'You have a $printS % chance of having a skin disease';
+
     return resultText;
+    // return resultText;
   }
 
   @override
@@ -175,11 +167,7 @@ class Result extends StatelessWidget {
             style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ), //Text
-          Text(
-            'Score ' '$resultScore',
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ), //Text
+           //Text
           FlatButton(
             child: Text(
               'Try out our Eye Disease detector.',
