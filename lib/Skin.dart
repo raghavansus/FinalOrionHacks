@@ -211,6 +211,8 @@ class Answer extends StatelessWidget {
 
       width: double.infinity,
       child: Container(
+        height: 75,
+        width: MediaQuery.of(context).size.width/2,
         margin: EdgeInsets.all(10),
         child: CupertinoButton(
           //const Color(0xFFFFCC80)
