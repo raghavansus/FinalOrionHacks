@@ -186,7 +186,7 @@ class Result extends StatelessWidget {
     int printS = score.toInt();
     String resultText;
 
-    resultText = 'You have a $printS % chance of having a skin disease';
+    resultText = 'You have a $printS % chance of having a eye disease/disorder. If you are concerned, please consult a medical professional or dial 911 if you believe you are having an emergency.';
 
     return resultText;
     // return resultText;
@@ -208,7 +208,7 @@ class Result extends StatelessWidget {
             child: Text(
               'Try out our Eye Disease detector.',
             ), //Text
-            textColor: Color(0xFFF57C00),
+            textColor: Colors.deepOrange[800],
             onPressed: resetHandler,
           ),
         ], //<Widget>[]

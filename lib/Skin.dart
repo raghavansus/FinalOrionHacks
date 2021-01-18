@@ -29,7 +29,7 @@ class SkinPage extends StatefulWidget {
   State<StatefulWidget> createState() => new skinpage();
 }
 
-class skinpag extends State<StatefulWidget> {
+class skinpag extends StatefulWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -39,6 +39,12 @@ class skinpag extends State<StatefulWidget> {
         color: Colors.blue,
       ),
     );
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }
 
@@ -177,19 +183,22 @@ class skinpage extends State<StatefulWidget> {
   }
 }
 
+
 class Result extends StatelessWidget {
   final int resultScore;
   final Function resetHandler;
 
+
   Result(this.resultScore, this.resetHandler);
 
   //Remark Logic
+
   String get resultPhrase {
     double score = 100 * (resultScore/42);
     int printS = score.toInt();
     String resultText;
 
-    resultText = 'You have a $printS % chance of having a skin disease';
+    resultText = 'You have a $printS % chance of having a skin disease. If you are concerned, please consult a medical professional or dial 911 if you believe you are having an emergency.';
 
     return resultText;
   }
@@ -208,18 +217,19 @@ class Result extends StatelessWidget {
           //Text
           FlatButton(
             child: Text(
-              'Take a photo of your skin',
+              'Get better results with our Skin Disease Detector!',
             ), //Text
-            textColor: Color(0xFFF57C00),
-            onPressed: resetHandler,
+            textColor: Colors.deepOrange[800],
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => skinpag()),
+                );
+              }
+
+
           ),
-          FlatButton(
-            child: Text(
-              'Skip Photo and get percentage of skin disease',
-            ), //Text
-            textColor: Color(0xFFF57C00),
-            onPressed: resetHandler,
-          ), //FlatButton
+
         ], //<Widget>[]
       ), //Column
     ); //Center
@@ -305,6 +315,6 @@ class Question extends StatelessWidget {
         style: TextStyle(fontSize: 28),
         textAlign: TextAlign.center,
       ), //Text
-    ); //Contaier
+    ); //Container
   }
 }
