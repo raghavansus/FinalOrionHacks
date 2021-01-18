@@ -136,7 +136,7 @@ class GeneralHealth extends StatelessWidget {
   };
 
   Widget getCategoryContainer(String categoryName) {
-    return new Container(
+    return Container(
       // gradient: LinearGradient(colors: [Colors.orange, Colors.blue]),
       margin: EdgeInsets.only(right: 10, left: 10, bottom: 20),
       height: 180,

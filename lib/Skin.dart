@@ -189,7 +189,7 @@ class Result extends StatelessWidget {
     int printS = score.toInt();
     String resultText;
 
-    resultText = 'You have a $printS % chance of having a skin disease';
+    resultText = 'You have a $printS % chance of having a skin disease. If you are concerned, please consult a medical professional or dial 911 if you believe you are having an emergency.';
 
     return resultText;
   }
@@ -208,18 +208,12 @@ class Result extends StatelessWidget {
           //Text
           FlatButton(
             child: Text(
-              'Take a photo of your skin',
+              'Get better results with our Skin Disease Detector!',
             ), //Text
-            textColor: Color(0xFFF57C00),
+            textColor: Colors.deepOrange[800],
             onPressed: resetHandler,
           ),
-          FlatButton(
-            child: Text(
-              'Skip Photo and get percentage of skin disease',
-            ), //Text
-            textColor: Color(0xFFF57C00),
-            onPressed: resetHandler,
-          ), //FlatButton
+
         ], //<Widget>[]
       ), //Column
     ); //Center

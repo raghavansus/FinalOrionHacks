@@ -50,7 +50,7 @@ class homescreen extends State<StatefulWidget> {
                 color: Colors.red,
               ),
               child: Text(
-                'Your Profile',
+                'Welcome to EyeDoctor!',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -142,7 +142,7 @@ class homescreen extends State<StatefulWidget> {
               Stack(
                 children: <Widget>[
                   Container(
-                    height: 600,
+                    height: 700,
                     //margin: EdgeInsets.only(top: 200),
                     padding: EdgeInsets.all(20),
                     child: Column(
@@ -157,7 +157,7 @@ class homescreen extends State<StatefulWidget> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   height: 3,
-                                  color: Colors.white,
+                                  color: Color(0xFF083663),
                                   fontSize: 20),
                             ),
                           ),
@@ -194,7 +194,7 @@ class homescreen extends State<StatefulWidget> {
     "Doctors Nearby":
         Icon(Icons.local_hospital, color: Color(0xFF083663), size: 50),
     "Chat Bot":
-    Icon(Icons.local_hospital, color: Color(0xFF083663), size: 50),
+    Icon(Icons.message_rounded, color: Color(0xFF083663), size: 50),
   };
 
   Widget getCategoryContainer(String categoryName) {
