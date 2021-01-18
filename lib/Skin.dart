@@ -213,13 +213,6 @@ class Result extends StatelessWidget {
             textColor: Color(0xFFF57C00),
             onPressed: resetHandler,
           ),
-          FlatButton(
-            child: Text(
-              'Skip Photo and get percentage of skin disease',
-            ), //Text
-            textColor: Color(0xFFF57C00),
-            onPressed: resetHandler,
-          ), //FlatButton
         ], //<Widget>[]
       ), //Column
     ); //Center
