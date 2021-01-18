@@ -75,6 +75,42 @@ class skinpage extends State<StatefulWidget> {
         {'text': 'No', 'score': 0},
       ],
     },
+    {
+      'questionText': ' Q5. How many hours of exercise do you get per week?',
+      'answers': [
+        {'text': '0-1', 'score': 1},
+        {'text': '2-4', 'score': 2},
+        {'text': '5-7', 'score': 3},
+        {'text': '8-10', 'score': 4},
+        {'text': '11+', 'score': 5},
+      ],
+    },
+    {
+      'questionText': ' Q6. How often do you smoke per week?',
+      'answers': [
+        {'text': 'Never', 'score': 0},
+        {'text': 'Once a week', 'score': 2},
+        {'text': 'Twice a week', 'score': 3},
+        {'text': 'More than 3 times a week', 'score': 4},
+        {'text': 'All the time', 'score': 5},
+      ],
+    },
+    {
+      'questionText': ' Q7. Do you or anyone in you family have/had diabetes?',
+      'answers': [
+        {'text': 'Prefer not to answer', 'score': 0},
+        {'text': 'Yes', 'score': 5},
+        {'text': 'No', 'score': 0},
+      ],
+    },
+    {
+      'questionText': ' Q8. Do you squint vigorously or naturally tilt your head?',
+      'answers': [
+        {'text': 'Prefer not to answer', 'score': 0},
+        {'text': 'Yes', 'score': 10},
+        {'text': 'No', 'score': 0},
+      ],
+    },
 
   ];
 
@@ -122,7 +158,7 @@ class skinpage extends State<StatefulWidget> {
             //     colors: [const Color(0xFF90CAF9), const Color(0xFFFFCC80)]),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(55.0),
             child: _questionIndex < _questions.length
                 ? Quiz(
               answerQuestion: _answerQuestion,

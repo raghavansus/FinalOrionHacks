@@ -79,9 +79,37 @@ class skinpage extends State<StatefulWidget> {
       ],
     },
     {
-      'questionText': 'Q5. Do you have any hot red marks on your skin',
+      'questionText': 'Q5. Does your daily diet include dairy products?',
       'answers': [
         {'text': 'Yes', 'score': 10,},
+        {'text': 'No', 'score': 0},
+      ],
+    },
+    {
+      'questionText': ' Q6. How many hours in the sun do you get per week?',
+      'answers': [
+        {'text': '0-1', 'score': 1},
+        {'text': '2-4', 'score': 2},
+        {'text': '5-7', 'score': 3},
+        {'text': '8-10', 'score': 4},
+        {'text': '11+', 'score': 5},
+      ],
+    },
+    {
+      'questionText': ' Q7. How often do you smoke per week?',
+      'answers': [
+        {'text': 'Never', 'score': 0},
+        {'text': 'Once a week', 'score': 2},
+        {'text': 'Twice a week', 'score': 3},
+        {'text': 'More than 3 times a week', 'score': 4},
+        {'text': 'All the time', 'score': 5},
+      ],
+    },
+    {
+      'questionText': ' Q8. Do you or anyone in you family have/had diabetes?',
+      'answers': [
+        {'text': 'Prefer not to answer', 'score': 0},
+        {'text': 'Yes', 'score': 5},
         {'text': 'No', 'score': 0},
       ],
     },
@@ -157,7 +185,7 @@ class Result extends StatelessWidget {
 
   //Remark Logic
   String get resultPhrase {
-    double score = 100 * (resultScore/30);
+    double score = 100 * (resultScore/42);
     int printS = score.toInt();
     String resultText;
 
