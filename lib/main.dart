@@ -94,28 +94,41 @@ class homescreen extends State<StatefulWidget> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              // 0xFFF57C00
-              colors: [const Color(0xFFF57C00), Colors.blue]
-          ),
+              begin: Alignment.topLeft, end: Alignment.bottomRight,
+              // 0xFFF57C00 <- darker orange used for the icon ones
+              // Colors.blue <- darker blue used for the icon ones
+              //FF90CAF9 <- light blue
+              //FFFFCC80 <- light orange
+              colors: [const Color(0xFF90CAF9), const Color(0xFFFFCC80)]),
         ),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Container(
-                width: MediaQuery.of(context).size.width*2,
+                width: MediaQuery.of(context).size.width * 2,
                 height: 180,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(15)),
                 ),
-                padding: const EdgeInsets.only(top: 70, left: 40, right: 40, bottom: 0),
-                child: Image(
-                  height: 80,
-                  image: AssetImage('assets/cover[1].jpg'),
-                ),
-              ),
+                padding: const EdgeInsets.only(
+                    top: 70, left: 40, right: 40, bottom: 0),
 
+
+                    child: Container(
+                      child: SizedBox(
+                        height: 200,
+                        width: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(45),
+                          child: Image(
+                            height: 80,
+                            image: AssetImage('assets/default[1].jpg'),
+                          ),
+                        ),
+                      ),
+                    ),
+
+              ),
               Stack(
                 children: <Widget>[
                   Container(
@@ -158,12 +171,7 @@ class homescreen extends State<StatefulWidget> {
   }
 
   // ignore: non_constant_identifier_names
-  List<String> Categories = [
-    "Skin",
-    "Eyes",
-    "GeneralHealth",
-    "Doctors Nearby"
-  ];
+  List<String> Categories = ["Skin", "Eyes", "GeneralHealth", "Doctors Nearby"];
 
   Map jobIcon = {
     "Eyes": Icon(Icons.remove_red_eye, color: Color(0xFF083663), size: 50),
@@ -192,13 +200,10 @@ class homescreen extends State<StatefulWidget> {
             blurRadius: 10.0,
           ),
         ],
-        gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            // 0xFFF57C00
-            colors: [Colors.blue, const Color(0xFFF57C00)]
-
-        ),
+        gradient:
+            LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight,
+                // 0xFFF57C00
+                colors: [Colors.blue, const Color(0xFFF57C00)]),
       ),
       // decoration: BoxDecoration(
       //   color: Colors.white,

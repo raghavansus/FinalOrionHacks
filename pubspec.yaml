@@ -48,6 +48,7 @@ flutter:
   # assets:
   assets:
     - assets/cover[1].jpg
+    - assets/default[1].jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
