@@ -1,5 +1,7 @@
+import 'package:camera/camera.dart';
 import 'package:eye_detector/GeneralHealth.dart';
 import 'package:eye_detector/NearbyDoc.dart';
+import 'package:eye_detector/src/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,29 @@ import 'main.dart';
 
 void main() {
   runApp(Skin());
+}
+
+
+Future<void> runS() async {
+  // Ensure that plugin services are initialized so that `availableCameras()`
+  // can be called before `runApp()`
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Obtain a list of the available cameras on the device.
+  final cameras = await availableCameras();
+
+  // Get a specific camera from the list of available cameras.
+  final firstCamera = cameras.first;
+
+  runApp(
+    MaterialApp(
+      theme: ThemeData.dark(),
+      home: TakePictureScreen(
+        // Pass the appropriate camera to the TakePictureScreen widget.
+        camera: firstCamera,
+      ),
+    ),
+  );
 }
 
 class Skin extends StatelessWidget {
