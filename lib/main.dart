@@ -1,3 +1,4 @@
+import 'package:eye_detector/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'Eyes.dart';
@@ -16,7 +17,7 @@ class mainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Home Page",
-      home: HomeScreen(),
+      home: RegistrationScreen(),
       routes: <String, WidgetBuilder>{
         "Skin": (BuildContext context) => new Skin(),
         "Eyes": (BuildContext context) => new Eyes(),
