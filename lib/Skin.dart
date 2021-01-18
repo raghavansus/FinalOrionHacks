@@ -29,7 +29,7 @@ class SkinPage extends StatefulWidget {
   State<StatefulWidget> createState() => new skinpage();
 }
 
-class skinpag extends State<StatefulWidget> {
+class skinpag extends StatefulWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -39,6 +39,12 @@ class skinpag extends State<StatefulWidget> {
         color: Colors.blue,
       ),
     );
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }
 
@@ -177,13 +183,16 @@ class skinpage extends State<StatefulWidget> {
   }
 }
 
+
 class Result extends StatelessWidget {
   final int resultScore;
   final Function resetHandler;
 
+
   Result(this.resultScore, this.resetHandler);
 
   //Remark Logic
+
   String get resultPhrase {
     double score = 100 * (resultScore/42);
     int printS = score.toInt();
@@ -211,7 +220,14 @@ class Result extends StatelessWidget {
               'Get better results with our Skin Disease Detector!',
             ), //Text
             textColor: Colors.deepOrange[800],
-            onPressed: resetHandler,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => skinpag()),
+                );
+              }
+
+
           ),
 
         ], //<Widget>[]
@@ -299,6 +315,6 @@ class Question extends StatelessWidget {
         style: TextStyle(fontSize: 28),
         textAlign: TextAlign.center,
       ), //Text
-    ); //Contaier
+    ); //Container
   }
 }
