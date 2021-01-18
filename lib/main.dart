@@ -4,6 +4,7 @@ import 'Eyes.dart';
 import 'GeneralHealth.dart';
 import 'NearbyDoc.dart';
 import 'Skin.dart';
+import 'chatBot.dart';
 
 void main() {
   runApp(mainScreen());
@@ -21,6 +22,7 @@ class mainScreen extends StatelessWidget {
         "Eyes": (BuildContext context) => new Eyes(),
         "GeneralHealth": (BuildContext context) => new GeneralHealth(),
         "Doctors Nearby": (BuildContext context) => new NearbyDoc(),
+        "Chat Bot": (BuildContext context) => new chatBot(),
       },
     );
   }
@@ -48,7 +50,7 @@ class homescreen extends State<StatefulWidget> {
                 color: Colors.red,
               ),
               child: Text(
-                'Your Profile',
+                'Welcome to EyeDoctor!',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -85,6 +87,14 @@ class homescreen extends State<StatefulWidget> {
               onTap: () => {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => NearbyDoc()))
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.local_hospital),
+              title: Text('Chat Bot'),
+              onTap: () => {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => chatBot()))
               },
             ),
           ],
@@ -132,7 +142,7 @@ class homescreen extends State<StatefulWidget> {
               Stack(
                 children: <Widget>[
                   Container(
-                    height: 600,
+                    height: 700,
                     //margin: EdgeInsets.only(top: 200),
                     padding: EdgeInsets.all(20),
                     child: Column(
@@ -147,7 +157,7 @@ class homescreen extends State<StatefulWidget> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   height: 3,
-                                  color: Colors.white,
+                                  color: Color(0xFF083663),
                                   fontSize: 20),
                             ),
                           ),
@@ -171,7 +181,7 @@ class homescreen extends State<StatefulWidget> {
   }
 
   // ignore: non_constant_identifier_names
-  List<String> Categories = ["Skin", "Eyes", "GeneralHealth", "Doctors Nearby"];
+  List<String> Categories = ["Skin", "Eyes", "GeneralHealth", "Doctors Nearby", "Chat Bot"];
 
   Map jobIcon = {
     "Eyes": Icon(Icons.remove_red_eye, color: Color(0xFF083663), size: 50),
@@ -183,10 +193,12 @@ class homescreen extends State<StatefulWidget> {
     "GeneralHealth": Icon(Icons.healing, color: Color(0xFF083663), size: 50),
     "Doctors Nearby":
         Icon(Icons.local_hospital, color: Color(0xFF083663), size: 50),
+    "Chat Bot":
+    Icon(Icons.message_rounded, color: Color(0xFF083663), size: 50),
   };
 
   Widget getCategoryContainer(String categoryName) {
-    return new Container(
+    return Container(
       // gradient: LinearGradient(colors: [Colors.orange, Colors.blue]),
       margin: EdgeInsets.only(right: 10, left: 10, bottom: 20),
       height: 180,
@@ -195,7 +207,7 @@ class homescreen extends State<StatefulWidget> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15)),
         boxShadow: [
-          new BoxShadow(
+          BoxShadow(
             color: Colors.blueGrey[900],
             blurRadius: 10.0,
           ),
@@ -222,7 +234,7 @@ class homescreen extends State<StatefulWidget> {
             padding: EdgeInsets.only(top: 30),
             height: 100,
             width: 70,
-            child: new FloatingActionButton(
+            child:  FloatingActionButton(
               heroTag: categoryName,
               backgroundColor: Colors.white,
               child: jobIcon[categoryName],
@@ -247,7 +259,7 @@ class homescreen extends State<StatefulWidget> {
         i++;
       } else {
         i = 0;
-        jobCategoriesCards.add(new Row(
+        jobCategoriesCards.add( Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: rows,
         ));
@@ -257,7 +269,7 @@ class homescreen extends State<StatefulWidget> {
       }
     }
     if (rows.length > 0) {
-      jobCategoriesCards.add(new Row(
+      jobCategoriesCards.add( Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: rows,
       ));
