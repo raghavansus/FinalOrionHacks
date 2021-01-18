@@ -35,6 +35,7 @@ class skinpag extends State<StatefulWidget> {
     // TODO: implement build
     return Scaffold(
       body: Container(
+
         color: Colors.blue,
       ),
     );
@@ -117,17 +118,30 @@ class skinpage extends State<StatefulWidget> {
         appBar: AppBar(
           title: Text('Questionare about your skin'),
           // textTheme: ,
-          backgroundColor: Color(0xFFF57C00),
+          backgroundColor: Colors.blue,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: _questionIndex < _questions.length
-              ? Quiz(
-                  answerQuestion: _answerQuestion,
-                  questionIndex: _questionIndex,
-                  questions: _questions,
-                ) //Quiz
-              : Result(_totalScore, _resetQuiz),
+        body: Container(
+          decoration: BoxDecoration(
+              color: Color(0xFF90CAF9),
+            // gradient: LinearGradient(
+            //     begin: Alignment.topLeft, end: Alignment.bottomRight,
+            //     // 0xFFF57C00 <- darker orange used for the icon ones
+            //     // Colors.blue <- darker blue used for the icon ones
+            //     //FF90CAF9 <- light blue
+            //     //FFFFCC80 <- light orange
+            //     colors: [const Color(0xFF90CAF9), const Color(0xFFFFCC80)]),
+          ),
+          child: Padding(
+
+            padding: const EdgeInsets.all(30.0),
+            child: _questionIndex < _questions.length
+                ? Quiz(
+              answerQuestion: _answerQuestion,
+              questionIndex: _questionIndex,
+              questions: _questions,
+            ) //Quiz
+                : Result(_totalScore, _resetQuiz),
+          ),
         ), //Padding
       ), //Scaffold
       debugShowCheckedModeBanner: false,
@@ -190,7 +204,7 @@ class Result extends StatelessWidget {
             ), //Text
             textColor: Colors.blue,
             onPressed: resetHandler,
-          ),//FlatButton
+          ), //FlatButton
         ], //<Widget>[]
       ), //Column
     ); //Center
@@ -206,14 +220,28 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
+
       width: double.infinity,
-      child: RaisedButton(
-        color: Color(0xFFF57C00),
-        textColor: Colors.white,
-        child: Text(answerText),
-        onPressed: selectHandler,
-      ), //RaisedButton
-    ); //Container
+      child: Container(
+        margin: EdgeInsets.all(10),
+        child: CupertinoButton(
+          //const Color(0xFFFFCC80)
+          color: Color(0xFFFFCC80),
+          // textColor: Colors.black,
+          child: Text(
+              answerText,
+              style: TextStyle(
+                  color: Colors.black
+              )
+          ),
+          onPressed: selectHandler,
+        ),
+      ),
+
+    );
+
+    //Container
   }
 }
 
@@ -252,6 +280,7 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       width: double.infinity,
       margin: EdgeInsets.all(10),
       child: Text(
