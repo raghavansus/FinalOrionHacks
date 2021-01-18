@@ -1,4 +1,6 @@
+import 'package:eye_detector/screens/chat_screen.dart';
 import 'package:eye_detector/screens/registration_screen.dart';
+import 'package:eye_detector/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'Eyes.dart';
@@ -17,13 +19,13 @@ class mainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Home Page",
-      home: RegistrationScreen(),
+      home: WelcomeScreen(),
       routes: <String, WidgetBuilder>{
         "Skin": (BuildContext context) => new Skin(),
         "Eyes": (BuildContext context) => new Eyes(),
         "GeneralHealth": (BuildContext context) => new GeneralHealth(),
         "Doctors Nearby": (BuildContext context) => new NearbyDoc(),
-        "Chat Bot": (BuildContext context) => new chatBot(),
+        "Chat Bot": (BuildContext context) => new ChatScreen(),
       },
     );
   }

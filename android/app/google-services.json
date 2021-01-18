@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "882871549456",
+    "project_id": "eyedoc-a9d99",
+    "storage_bucket": "eyedoc-a9d99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882871549456:android:2a8f5427c31366c8fdd495",
+        "android_client_info": {
+          "package_name": "com.example.eye_detector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882871549456-ggf3ln8ptb6l2ja2l6uc960es4de2js5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eye_detector",
+            "certificate_hash": "01b466086d3ca00b8a749a6916ddaf76024ced37"
+          }
+        },
+        {
+          "client_id": "882871549456-9oe81osluoj38gak5e6b519svd5gi95n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf1P-9FUoYB_G8PoW4HLcT8ZkGaGNmDa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882871549456-9oe81osluoj38gak5e6b519svd5gi95n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
