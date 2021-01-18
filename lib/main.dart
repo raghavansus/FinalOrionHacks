@@ -186,7 +186,7 @@ class homescreen extends State<StatefulWidget> {
   };
 
   Widget getCategoryContainer(String categoryName) {
-    return new Container(
+    return Container(
       // gradient: LinearGradient(colors: [Colors.orange, Colors.blue]),
       margin: EdgeInsets.only(right: 10, left: 10, bottom: 20),
       height: 180,
@@ -195,7 +195,7 @@ class homescreen extends State<StatefulWidget> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15)),
         boxShadow: [
-          new BoxShadow(
+          BoxShadow(
             color: Colors.blueGrey[900],
             blurRadius: 10.0,
           ),
@@ -222,7 +222,7 @@ class homescreen extends State<StatefulWidget> {
             padding: EdgeInsets.only(top: 30),
             height: 100,
             width: 70,
-            child: new FloatingActionButton(
+            child:  FloatingActionButton(
               heroTag: categoryName,
               backgroundColor: Colors.white,
               child: jobIcon[categoryName],
@@ -247,7 +247,7 @@ class homescreen extends State<StatefulWidget> {
         i++;
       } else {
         i = 0;
-        jobCategoriesCards.add(new Row(
+        jobCategoriesCards.add( Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: rows,
         ));
@@ -257,7 +257,7 @@ class homescreen extends State<StatefulWidget> {
       }
     }
     if (rows.length > 0) {
-      jobCategoriesCards.add(new Row(
+      jobCategoriesCards.add( Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: rows,
       ));

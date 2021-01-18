@@ -4,17 +4,17 @@ import 'package:url_launcher/url_launcher.dart';
 
 _launchURL(String temp) async {
   var url = "";
-  if (temp.compareTo('Teen Resources') == 0) {
+  if (temp.compareTo('Nearest Flu Shot') == 0) {
     url =
-        'https://www.cupertino.org/residents/resources-and-services/resources-for-teens';
-  } else if (temp.compareTo('Senior Resources') == 0) {
+        'https://www.cdc.gov/flu/freeresources/flu-finder-widget.html';
+  } else if (temp.compareTo('Covid Resources') == 0) {
     url =
-        'https://www.cupertino.org/our-city/departments/parks-recreation/cupertino-senior-center/services-for-seniors/resources-for-seniors';
-  } else if (temp.compareTo('Coronavirus') == 0) {
+        'https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html';
+  } else if (temp.compareTo('Emergency Hotlines') == 0) {
     url =
-        'https://www.cupertino.org/our-city/city-news/coronavirus-covid-19/-fsiteid-1';
-  } else if (temp.compareTo('City Contact') == 0) {
-    url = 'https://www.cupertino.org/i-want-to/contact-the-city';
+        'http://www.pleaselive.org/hotlines/';
+  } else if (temp.compareTo('More Diseases Info') == 0) {
+    url = 'https://www.mayoclinic.org/patient-care-and-health-information';
   }
 
   if (await canLaunch(url)) {
@@ -91,7 +91,7 @@ class GeneralHealth extends StatelessWidget {
                             margin: EdgeInsets.all(40),
                             child: Center(
                               child: Text(
-                                "Availabe Resources",
+                                "Always Dial 911 if you believe you are having a medical emergency.",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     height: 1,
@@ -120,19 +120,19 @@ class GeneralHealth extends StatelessWidget {
   }
 
   List<String> Categories = [
-    "Teen Resources",
-    "Senior Resources",
-    "Coronavirus",
-    "City Contact",
+    "Nearest Flu Shot",
+    "Covid Resources",
+    "Emergency Hotlines",
+    "More Diseases Info",
   ];
 
   Map jobIcon = {
-    "Teen Resources": Icon(Icons.create, color: Color(0xFF083663), size: 50),
-    "Senior Resources": Icon(Icons.healing, color: Color(0xFF083663), size: 50),
-    "Coronavirus":
-        Icon(Icons.local_hospital, color: Color(0xFF083663), size: 50),
-    "City Contact":
-        Icon(Icons.question_answer, color: Color(0xFF083663), size: 50),
+    "Nearest Flu Shot": Icon(Icons.local_hospital_rounded, color: Color(0xFF083663), size: 50),
+    "Covid Resources": Icon(Icons.healing, color: Color(0xFF083663), size: 50),
+    "Emergency Hotlines":
+        Icon(Icons.phone, color: Color(0xFF083663), size: 50),
+    "More Diseases Info":
+        Icon(Icons.article_rounded , color: Color(0xFF083663), size: 50),
   };
 
   Widget getCategoryContainer(String categoryName) {
