@@ -92,15 +92,35 @@ class homescreen extends State<StatefulWidget> {
       ),
       //backgroundColor: Color(0xFF083663), // not needed now ig
       body: Container(
-
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              // 0xFFF57C00
+              colors: [const Color(0xFFF57C00), Colors.blue]
+          ),
+        ),
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              Container(
+                width: MediaQuery.of(context).size.width*2,
+                height: 180,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                ),
+                padding: const EdgeInsets.only(top: 70, left: 40, right: 40, bottom: 0),
+                child: Image(
+                  height: 80,
+                  image: AssetImage('assets/cover[1].jpg'),
+                ),
+              ),
+
               Stack(
                 children: <Widget>[
                   Container(
                     height: 600,
-                    margin: EdgeInsets.only(top: 200),
+                    //margin: EdgeInsets.only(top: 200),
                     padding: EdgeInsets.all(20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
