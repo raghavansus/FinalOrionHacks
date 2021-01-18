@@ -4,30 +4,34 @@ import 'src/locations.dart' as locations;
 
 
 void main() {
-  runApp(MyApp());
+  runApp(NearbyDoc());
 }
 
-class MyApp extends StatefulWidget {
+class NearbyDoc extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<NearbyDoc> {
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
-    final googleOffices = await locations.getGoogleOffices();
+    // final googleOffices = await locations.getGoogleOffices();
+    var lat = 37.3230;
+    var long = -122.0322;
     setState(() {
       _markers.clear();
-      for (final office in googleOffices.offices) {
+      for (var x = 0; x < 10; x++) {
         final marker = Marker(
-          markerId: MarkerId(office.name),
-          position: LatLng(office.lat, office.lng),
+          markerId: MarkerId("Hospital"),
+          position: LatLng(lat, long),
           infoWindow: InfoWindow(
-            title: office.name,
-            snippet: office.address,
+            title: "Kaiser Permanante",
+
           ),
         );
-        _markers[office.name] = marker;
+        _markers["Kaiser Permanante"] = marker;
+        lat += 0.003;
+        long += 0.004;
       }
     });
   }
@@ -43,8 +47,8 @@ class _MyAppState extends State<MyApp> {
         body: GoogleMap(
           onMapCreated: _onMapCreated,
           initialCameraPosition: CameraPosition(
-            target: const LatLng(0, 0),
-            zoom: 2,
+            target: const LatLng(37.3260, -122.0322),
+            zoom: 12,
           ),
           markers: _markers.values.toSet(),
         ),
