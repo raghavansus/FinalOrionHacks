@@ -20,7 +20,7 @@ class mainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Home Page",
-      home: WelcomeScreen(),
+      home: HomeScreen(),
       routes: <String, WidgetBuilder>{
         "Skin": (BuildContext context) => new Skin(),
         "Eyes": (BuildContext context) => new Eyes(),

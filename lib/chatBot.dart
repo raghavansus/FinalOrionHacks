@@ -27,7 +27,15 @@ class ChattsBot extends State<StatefulWidget> {
 
       ),
       body: Container(
-
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft, end: Alignment.bottomRight,
+              // 0xFFF57C00 <- darker orange used for the icon ones
+              // Colors.blue <- darker blue used for the icon ones
+              //FF90CAF9 <- light blue
+              //FFFFCC80 <- light orange
+              colors: [const Color(0xFF90CAF9), const Color(0xFFFFCC80)]),
+        ),
       ),
     );
   }

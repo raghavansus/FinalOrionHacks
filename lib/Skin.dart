@@ -16,8 +16,6 @@ class Skin extends StatelessWidget {
     return MaterialApp(
       title: "Home Page",
       home: SkinPage(),
-
-
     );
 
     // TODO: implement build
@@ -35,7 +33,6 @@ class skinpag extends StatefulWidget {
     // TODO: implement build
     return Scaffold(
       body: Container(
-
         color: Colors.blue,
       ),
     );
@@ -87,7 +84,10 @@ class skinpage extends State<StatefulWidget> {
     {
       'questionText': 'Q5. Does your daily diet include dairy products?',
       'answers': [
-        {'text': 'Yes', 'score': 10,},
+        {
+          'text': 'Yes',
+          'score': 10,
+        },
         {'text': 'No', 'score': 0},
       ],
     },
@@ -156,7 +156,7 @@ class skinpage extends State<StatefulWidget> {
         ),
         body: Container(
           decoration: BoxDecoration(
-              color: Color(0xFF90CAF9),
+            color: Color(0xFF90CAF9),
             // gradient: LinearGradient(
             //     begin: Alignment.topLeft, end: Alignment.bottomRight,
             //     // 0xFFF57C00 <- darker orange used for the icon ones
@@ -166,14 +166,13 @@ class skinpage extends State<StatefulWidget> {
             //     colors: [const Color(0xFF90CAF9), const Color(0xFFFFCC80)]),
           ),
           child: Padding(
-
             padding: const EdgeInsets.all(30.0),
             child: _questionIndex < _questions.length
                 ? Quiz(
-              answerQuestion: _answerQuestion,
-              questionIndex: _questionIndex,
-              questions: _questions,
-            ) //Quiz
+                    answerQuestion: _answerQuestion,
+                    questionIndex: _questionIndex,
+                    questions: _questions,
+                  ) //Quiz
                 : Result(_totalScore, _resetQuiz),
           ),
         ), //Padding
@@ -183,22 +182,21 @@ class skinpage extends State<StatefulWidget> {
   }
 }
 
-
 class Result extends StatelessWidget {
   final int resultScore;
   final Function resetHandler;
-
 
   Result(this.resultScore, this.resetHandler);
 
   //Remark Logic
 
   String get resultPhrase {
-    double score = 100 * (resultScore/42);
+    double score = 100 * (resultScore / 42);
     int printS = score.toInt();
     String resultText;
 
-    resultText = 'You have a $printS % chance of having a skin disease. If you are concerned, please consult a medical professional or dial 911 if you believe you are having an emergency.';
+    resultText =
+        'You have a $printS % chance of having a skin disease.\n \nIf you are concerned, please consult a medical professional or dial 911 if you believe you are having an emergency.';
 
     return resultText;
   }
@@ -215,21 +213,46 @@ class Result extends StatelessWidget {
             textAlign: TextAlign.center,
           ), //Text
           //Text
-          FlatButton(
-            child: Text(
-              'Get better results with our Skin Disease Detector!',
-            ), //Text
-            textColor: Colors.deepOrange[800],
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => skinpag()),
-                );
-              }
+          // FlatButton(
+          //   child: Text(
+          //     'Get better results with our Skin Disease Detector!',
+          //   ), //Text
+          //   textColor: Colors.deepOrange[800],
+          //     onPressed: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(builder: (context) => skinpag()),
+          //       );
+          //     }
+          //
+          //
+          // ),
 
+          Container(
+            color: Colors.deepOrange[800],
+            height: 100,
+            width: 200,
+            margin: EdgeInsets.all(30),
+            // decoration: BoxDecoration(
+            //   borderRadius: BorderRadius.all(Radius.circular(15)),
+            // ),
+            child: CupertinoButton(
+                //const Color(0xFFFFCC80)
+                // textColor: Colors.black,
 
+                child: Text(
+                  'Get better results with our Skin Disease Detector!',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => skinpag()),
+                  );
+                }),
           ),
-
         ], //<Widget>[]
       ), //Column
     ); //Center
@@ -245,27 +268,19 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
-
       width: double.infinity,
       child: Container(
         height: 75,
-        width: MediaQuery.of(context).size.width/2,
+        width: MediaQuery.of(context).size.width / 2,
         margin: EdgeInsets.all(10),
         child: CupertinoButton(
           //const Color(0xFFFFCC80)
           color: Color(0xFFFFCC80),
           // textColor: Colors.black,
-          child: Text(
-              answerText,
-              style: TextStyle(
-                  color: Colors.black
-              )
-          ),
+          child: Text(answerText, style: TextStyle(color: Colors.black)),
           onPressed: selectHandler,
         ),
       ),
-
     );
 
     //Container
@@ -307,7 +322,6 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
       width: double.infinity,
       margin: EdgeInsets.all(10),
       child: Text(
